@@ -3,4 +3,179 @@
 
 body {
   font-family: 'lato', sans-serif;
+  position: relative;
+  background-color: whitesmoke;
+}
+
+.header {
+  &__main {
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & div {
+      text-transform: uppercase;
+      font-family: 'Cinzel', serif;
+      margin: 0.5rem 0;
+      padding: 0.5rem 0;
+      font-size: 3rem;
+    }
+  }
+}
+
+.navigation {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    & li {
+      font-size: 1.05rem;
+    }
+  }
+}
+
+// mens-outwear section
+
+.mens-outwear,
+.ladies-outwear,
+.mens-tshirt,
+.ladies-tshirt {
+  position: relative;
+  margin: 3.5rem 0 0 0;
+
+  height: 24rem;
+  background-position: center;
+  background-size: cover;
+
+  &__content {
+    position: absolute;
+    top: 72.5%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+
+  & p {
+    color: white;
+    font-size: 3rem;
+    background-color: rgba(82, 82, 82, 0.404);
+    font-weight: 600;
+    padding: 1rem 3rem;
+    margin-bottom: 2rem;
+    border: 1px rgb(146, 146, 146) dashed;
+    border-radius: 2px;
+  }
+
+  & a {
+    transition: all 0.3s ease-in-out;
+    &:link,
+    &:visited {
+      color: white;
+      background-color: #343b40;
+      padding: 1rem 3rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      border-radius: 2px;
+    }
+
+    &:hover,
+    &active {
+      background-color: #4d4d4d;
+    }
+  }
+}
+
+.mens-outwear {
+  background-image: url('../images/mens-wear.jpg');
+}
+
+.ladies-outwear {
+  background-image: url('../images/ladies-wear.jpg');
+}
+
+.combined-tshirts {
+  display: flex;
+
+  & p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.mens-tshirt,
+.ladies-tshirt {
+  width: 50%;
+}
+
+.mens-tshirt {
+  background-image: url('../images/mens-tshirt.jpg');
+}
+
+.ladies-tshirt {
+  background-image: url('../images/ladies-tshirt.jpg');
+}
+
+.footer {
+  background-color: #e6eef0;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: rgb(37, 37, 37);
+  margin-top: 3rem;
+
+  &__credits {
+    & a {
+      text-decoration: none;
+      &:link,
+      &:visited {
+        color: rgb(37, 37, 37);
+      }
+      &:hover,
+      &:active {
+        color: rgb(37, 37, 37);
+      }
+    }
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: 2.25rem;
+  height: 2.25rem;
+  stroke-width: 0;
+  stroke: #000;
+  fill: #000;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+
+.combined-tshirts,
+.mens-outwear {
+  display: none;
+}
+
+/*    Product Block - mens-outwear-block */
+.mens-outwear-block {
+  text-align: center;
+
+  background-color: white;
+  &__products {
+    width: 80%;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    // background-color: white;
+  }
 }
