@@ -1,0 +1,14 @@
+{
+  "name": "ecommerce-lawrence",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html"
+  },
+  "author": "Lawrence <Lawrence4code@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "parcel-bundler": "^1.11.0",
+    "sass": "^1.17.2"
+  }
+}
