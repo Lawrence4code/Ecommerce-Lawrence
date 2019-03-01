@@ -19,7 +19,7 @@ To run this in your local system, your will require
 
 ### Installing
 
-- Clone the Repo
+- Clone the Repo.
 - cd into the repo and run 'yarn install or npm install' to install all the neccessary dependencies'
 - Then run 'yarn run dev' for development and 'yarn run build' for production build.
 
@@ -36,4 +36,4 @@ Please contact or raise an issue if you find any bug in this site.
 
 ## Acknowledgments
 
-- Unspash.com (Credits to the unslash.com and respective photographer)
+- Unsplash.com (Credits to the unsplash.com and respective photographers)

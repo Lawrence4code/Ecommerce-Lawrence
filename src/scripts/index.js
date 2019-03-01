@@ -59,7 +59,7 @@ function togglePage(e, page) {
   // iterating through each tablinks and removing class to reset sytles
   for (let tab of tablinks) {
     tab.className = tab.className.replace(' active', '');
-    tab.className = tab.className.replace(' aniAtribute', '');
+    tab.className = tab.className.replace(' aniAttribute', '');
     tab.style.border = 'none';
     tab.style.borderBottom = '1px transparent solid';
   }
