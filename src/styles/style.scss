@@ -27,7 +27,7 @@ body {
 
 .navigation {
   width: 60%;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   text-align: center;
 
   ul {
@@ -36,11 +36,64 @@ body {
 
     & li {
       font-size: 1.05rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid transparent;
     }
   }
 }
 
 // mens-outwear section
+
+.main-page-block {
+  &__mens-outwear,
+  &__ladies-outwear,
+  &__mens-tshirt,
+  &__ladies-tshirt {
+    position: relative;
+    height: 24rem;
+    margin: 4rem 0;
+    background-position: center;
+    background-size: cover;
+
+    &-content {
+      position: absolute;
+      top: 72.5%;
+      left: 50%;
+      text-align: center;
+      transform: translate(-50%, -50%);
+    }
+
+    & p {
+      color: white;
+      font-size: 3rem;
+      background-color: rgba(82, 82, 82, 0.404);
+      font-weight: 600;
+      padding: 1rem 3rem;
+      margin-bottom: 2rem;
+      border-top: 1px rgb(146, 146, 146) dashed;
+      border-bottom: 1px rgb(146, 146, 146) dashed;
+      border-radius: 2px;
+    }
+
+    & a {
+      transition: all 0.3s ease-in-out;
+      &:link,
+      &:visited {
+        color: white;
+        background-color: #343b40;
+        padding: 1rem 3rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 2px;
+      }
+
+      &:hover,
+      &active {
+        background-color: #4d4d4d;
+      }
+    }
+  }
+}
 
 .mens-outwear,
 .ladies-outwear,
@@ -68,7 +121,8 @@ body {
     font-weight: 600;
     padding: 1rem 3rem;
     margin-bottom: 2rem;
-    border: 1px rgb(146, 146, 146) dashed;
+    border-top: 1px rgb(146, 146, 146) dashed;
+    border-bottom: 1px rgb(146, 146, 146) dashed;
     border-radius: 2px;
   }
 
@@ -91,16 +145,17 @@ body {
   }
 }
 
-.mens-outwear {
+.main-page-block__mens-outwear {
   background-image: url('../images/mens-wear.jpg');
 }
 
-.ladies-outwear {
+.main-page-block__ladies-outwear {
   background-image: url('../images/ladies-wear.jpg');
 }
 
-.combined-tshirts {
+.main-page-block__combined-tshirts {
   display: flex;
+  padding-bottom: 1rem;
 
   & p {
     font-size: 1.5rem;
@@ -110,19 +165,21 @@ body {
   }
 }
 
-.mens-tshirt,
-.ladies-tshirt {
+.main-page-block__mens-tshirt,
+.main-page-block__ladies-tshirt {
+  margin-top: 1rem;
   width: 50%;
 }
 
-.mens-tshirt {
+.main-page-block__mens-tshirt {
   background-image: url('../images/mens-tshirt.jpg');
 }
 
-.ladies-tshirt {
+.main-page-block__ladies-tshirt {
   background-image: url('../images/ladies-tshirt.jpg');
 }
 
+// Footer
 .footer {
   background-color: #e6eef0;
   height: 3rem;
@@ -131,7 +188,6 @@ body {
   align-items: center;
   padding: 1rem;
   color: rgb(37, 37, 37);
-  margin-top: 3rem;
 
   &__credits {
     & a {
@@ -148,6 +204,8 @@ body {
   }
 }
 
+// Styles
+
 .icon {
   display: inline-block;
   width: 2.25rem;
@@ -161,21 +219,118 @@ body {
   cursor: pointer;
 }
 
-.combined-tshirts,
-.mens-outwear {
+/*    Product Block - mens-outwear-block   */
+.mens-outwear-block,
+.ladies-outwear-block,
+.mens-tshirt-block,
+.ladies-tshirt-block {
+  text-align: center;
+  background-color: white;
+  margin: 4rem 0 0 0;
+  padding-bottom: 2rem;
+  animation: fadeIn 0.4s ease-in-out forwards;
+
+  &__hero {
+    position: relative;
+
+    height: 24rem;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__hero-content {
+    position: absolute;
+    top: 72.5%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    & p {
+      color: white;
+      font-size: 3rem;
+      background-color: rgba(82, 82, 82, 0.404);
+      font-weight: 600;
+      padding: 1rem 3rem;
+      margin-bottom: 2rem;
+      border-top: 1px rgb(146, 146, 146) dashed;
+      border-bottom: 1px rgb(146, 146, 146) dashed;
+      border-radius: 2px;
+    }
+
+    & a {
+      transition: all 0.3s ease-in-out;
+      &:link,
+      &:visited {
+        color: white;
+        background-color: #343b40;
+        padding: 1rem 3rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 2px;
+      }
+
+      &:hover,
+      &active {
+        background-color: #4d4d4d;
+      }
+    }
+  }
+
+  &__title {
+    padding: 2rem 0 0 0;
+  }
+  &__products {
+    width: 80%;
+    margin: 2rem auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__cards {
+    margin-bottom: 2rem;
+  }
+}
+
+.mens-outwear-block__hero {
+  background-image: url('../images/mens-wear.jpg');
+}
+
+.ladies-outwear-block__hero {
+  background-image: url('../images/ladies-wear.jpg');
+}
+
+.mens-tshirt-block__hero {
+  background-image: url('../images/mens-tshirt.jpg');
+}
+
+.ladies-tshirt-block__hero {
+  background-image: url('../images/ladies-tshirt.jpg');
+}
+
+.mens-outwear-block,
+.ladies-outwear-block,
+.mens-tshirt-block,
+.ladies-tshirt-block {
   display: none;
 }
 
-/*    Product Block - mens-outwear-block */
-.mens-outwear-block {
-  text-align: center;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
-  background-color: white;
-  &__products {
-    width: 80%;
-    margin: 2rem auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    // background-color: white;
+.aniAtribute {
+  animation: borderBottom 0.5s ease-in-out forwards;
+}
+
+@keyframes borderBottom {
+  from {
+    border-bottom: 1px solid transparent;
+  }
+  to {
+    border-bottom: 1px solid #8d9296;
   }
 }
