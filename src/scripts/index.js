@@ -1,10 +1,6 @@
 import '../styles/style.scss';
 
-console.log('index.js file.');
-
-// const tablinks = document.getElementsByClassName('tablinks');
-// const tabcontent = document.getElementsByClassName('tabcontent');
-
+// getting all the specific ids and storing in variable
 const mensOutwearElement = document.querySelectorAll(
   '#mens-outwear-tab, #mens-outwear-btn'
 );
@@ -18,6 +14,7 @@ const ladiesTshirtElement = document.querySelectorAll(
   '#ladies-tshirt-tab, #ladies-tshirt-btn'
 );
 
+// iterating through above created variables and adding event listener
 for (let ele of mensOutwearElement) {
   ele.addEventListener('click', e => {
     togglePage(e, 'mens-outwear-block');
@@ -39,20 +36,27 @@ for (let ele of ladiesTshirtElement) {
   });
 }
 
+// toggle function to switch between tabs
 function togglePage(e, page) {
+  // for smooth scrolling when click on button or links
   window.scroll({
     top: 0,
     left: 0,
     behavior: 'smooth'
   });
+
+  // variabke for tabs
   const tablinks = document.getElementsByClassName('tablinks');
 
+  // variable for blocks
   const blockContent = document.getElementsByClassName('blocks');
 
+  // setting all blocks content to display to hide
   for (let element of blockContent) {
     element.style.display = 'none';
   }
 
+  // iterating through each tablinks and removing class to reset sytles
   for (let tab of tablinks) {
     tab.className = tab.className.replace(' active', '');
     tab.className = tab.className.replace(' aniAtribute', '');
@@ -60,6 +64,7 @@ function togglePage(e, page) {
     tab.style.borderBottom = '1px transparent solid';
   }
 
+  // adding classes based on element click
   document.getElementById(page).style.display = 'block';
   e.currentTarget.className += ' active';
   e.currentTarget.className += ' aniAtribute';
@@ -67,6 +72,7 @@ function togglePage(e, page) {
 
 // Snackbar Function
 function snackbarFunction() {
+  console.log('triggered');
   var snackbarElement = document.getElementById('snackbar');
 
   snackbarElement.className = 'show';
@@ -76,6 +82,10 @@ function snackbarFunction() {
   }, 2000);
 }
 
-document.querySelector('.icon').addEventListener('click', () => {
-  snackbarFunction();
-});
+// document.querySelector('.hot-link');
+
+for (let ele of document.querySelectorAll('.hot-link')) {
+  ele.addEventListener('click', () => {
+    snackbarFunction();
+  });
+}

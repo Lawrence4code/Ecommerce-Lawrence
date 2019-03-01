@@ -2,26 +2,28 @@
 @import './base';
 
 body {
+  background-color: whitesmoke;
   font-family: 'lato', sans-serif;
   position: relative;
-  background-color: whitesmoke;
 }
 
 /* --------------- Header --------------- */
 .header {
   &__main {
+    align-items: center;
+    display: flex;
+    justify-content: center;
     text-align: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    & div {
-      text-transform: uppercase;
+    & a {
       font-family: 'Cinzel', serif;
-      margin: 0.5rem 0;
-      padding: 0.5rem 0;
       font-size: 3rem;
+      margin: 0.5rem 0 1rem 0;
+      padding: 0.5rem 0;
+      text-transform: uppercase;
+      color: #2b3236;
+      letter-spacing: 5px;
+      text-decoration: none;
     }
   }
 }
@@ -29,9 +31,9 @@ body {
 /* --------------- Navigation --------------- */
 
 .navigation {
-  width: 60%;
   margin: 0 auto 2rem auto;
   text-align: center;
+  width: 60%;
 
   @include respond(phone) {
     width: 90%;
@@ -42,10 +44,20 @@ body {
     grid-template-columns: repeat(4, 1fr);
 
     & li {
-      font-size: 1.05rem;
-      padding-bottom: 1rem;
       border-bottom: 1px solid transparent;
+      font-size: 1.05rem;
       margin: 0 0.1rem;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+      width: fit-content;
+      margin: 0 auto;
+      transition: all 0.3s ease-in-out;
+      color: #242a2e;
+      cursor: pointer;
+
+      &:hover {
+        font-size: 1.1rem;
+      }
     }
   }
 }
@@ -57,30 +69,30 @@ body {
   &__ladies-outwear,
   &__mens-tshirt,
   &__ladies-tshirt {
-    position: relative;
-    height: 24rem;
-    margin: 4rem 0;
     background-position: center;
     background-size: cover;
+    height: 24rem;
+    margin: 4rem 0;
+    position: relative;
 
     &-content {
-      position: absolute;
-      top: 72.5%;
       left: 50%;
+      position: absolute;
       text-align: center;
+      top: 72.5%;
       transform: translate(-50%, -50%);
     }
 
     & p {
-      color: white;
-      font-size: 3rem;
       background-color: rgba(82, 82, 82, 0.404);
-      font-weight: 600;
-      padding: 1rem 3rem;
-      margin-bottom: 2rem;
       border-top: 1px rgb(146, 146, 146) dashed;
       border-bottom: 1px rgb(146, 146, 146) dashed;
       border-radius: 2px;
+      color: white;
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      padding: 1rem 3rem;
 
       @include respond(phone) {
         font-size: 1.5rem;
@@ -88,12 +100,12 @@ body {
     }
 
     & span {
-      transition: all 0.3s ease-in-out;
-      color: white;
       background-color: #343b40;
-      padding: 1rem 3rem;
-      text-transform: uppercase;
       border-radius: 2px;
+      color: white;
+      padding: 1rem 3rem;
+      transition: all 0.3s ease-in-out;
+      text-transform: uppercase;
 
       &:hover,
       &active {
@@ -146,151 +158,89 @@ body {
   background-image: url('../images/ladies-tshirt.jpg');
 }
 
-/* --------------- Footer --------------- */
-.footer {
-  background-color: #e6eef0;
-  height: 3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  color: rgb(37, 37, 37);
-
-  &__credits {
-    & a {
-      text-decoration: none;
-      &:link,
-      &:visited {
-        color: rgb(37, 37, 37);
-      }
-      &:hover,
-      &:active {
-        color: rgb(37, 37, 37);
-      }
-    }
-  }
-}
-
-/* --------------- Icon --------------- */
-
-.icon {
-  display: inline-block;
-  width: 2.25rem;
-  height: 2.25rem;
-  stroke-width: 0;
-  stroke: #424242;
-  fill: #424242;
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  cursor: pointer;
-}
-
-.icon-menu {
-  position: absolute;
-  top: 1rem;
-  left: 1.5rem;
-  display: none;
-
-  @include respond(phone) {
-    display: block;
-  }
-}
-
-.icon-shopping {
-  position: absolute;
-  top: 1rem;
-  left: 1.5rem;
-}
-
-#snackbar {
-  visibility: hidden;
-  position: absolute;
-  left: 50%;
-  top: 5%;
-  color: whitesmoke;
-  background-color: #424242;
-  transform: translate(-50%, -50%);
-  padding: 1rem 3rem;
-  z-index: 2;
-  border: 1px dashed rgb(197, 58, 48);
-  border-radius: 2px;
-  height: 3.5rem;
-
-  &.show {
-    visibility: visible;
-    animation: fadein 0.7s ease-in-out, fadeout 0.7s ease-in-out;
-  }
-}
-
 /* --------------- Product Blocks  --------------- */
 
 .mens-outwear-block,
 .ladies-outwear-block,
 .mens-tshirt-block,
 .ladies-tshirt-block {
-  text-align: center;
+  animation: fadein 0.4s ease-in-out forwards;
   background-color: white;
   margin: 4rem 0 0 0;
   padding-bottom: 2rem;
-  animation: fadeIn 0.4s ease-in-out forwards;
+  text-align: center;
 
   &__hero {
-    position: relative;
-    height: 26rem;
     background-position: center;
     background-size: cover;
+    height: 26rem;
+    position: relative;
   }
 
   &__hero-content {
-    position: absolute;
-    top: 80%;
     left: 50%;
+    position: absolute;
+    top: 85%;
     text-align: center;
     transform: translate(-50%, -50%);
     & p {
-      color: white;
-      font-size: 2rem;
       background-color: rgba(82, 82, 82, 0.404);
-      font-weight: 600;
-      padding: 1rem 3rem;
-      margin-bottom: 2rem;
       border-top: 1px rgb(146, 146, 146) dashed;
       border-bottom: 1px rgb(146, 146, 146) dashed;
       border-radius: 2px;
+      color: white;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      padding: 1rem 3rem;
 
       @include respond(phone) {
         font-size: 1.5rem;
-      }
-    }
-
-    & a {
-      transition: all 0.3s ease-in-out;
-      &:link,
-      &:visited {
-        color: white;
-        background-color: #343b40;
-        padding: 1rem 3rem;
-        text-decoration: none;
-        text-transform: uppercase;
-        border-radius: 2px;
-      }
-
-      &:hover,
-      &active {
-        background-color: #4d4d4d;
       }
     }
   }
 
   &__title {
     padding: 2rem 0 0 0;
+    color: #343b40;
   }
+
+  &__quantity {
+    color: #343b40;
+  }
+
+  &__cards-title {
+    color: #343b40;
+    font-size: 1.1rem;
+    padding: 5px 0;
+  }
+
+  &__cards-price,
+  &__cards-add2cart {
+    background-color: #343b40;
+    display: inline-block;
+    color: whitesmoke;
+    padding: 0.4rem 3rem;
+    border-radius: 2px;
+    margin-top: 0.5rem;
+  }
+
+  &__cards-add2cart {
+    padding: 0.4rem 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      color: #343b40;
+      background-color: yellowgreen;
+    }
+  }
+
   &__products {
-    width: 80%;
-    margin: 2rem auto 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    margin: 2rem auto 0 auto;
+    width: 80%;
 
     @include respond(tablet) {
       grid-template-columns: repeat(2, 1fr);
@@ -331,6 +281,83 @@ body {
   display: none;
 }
 
+/* --------------- Footer --------------- */
+.footer {
+  align-items: center;
+  background-color: #e6eef0;
+  color: rgb(37, 37, 37);
+  display: flex;
+  height: 3rem;
+  justify-content: space-between;
+  padding: 1rem;
+
+  &__credits {
+    & a {
+      text-decoration: none;
+      &:link,
+      &:visited {
+        color: rgb(37, 37, 37);
+      }
+      &:hover,
+      &:active {
+        color: rgb(37, 37, 37);
+      }
+    }
+  }
+}
+
+/* --------------- Icon --------------- */
+
+.icon {
+  cursor: pointer;
+  display: inline-block;
+  fill: #424242;
+  height: 2.25rem;
+  position: absolute;
+  right: 1.5rem;
+  stroke-width: 0;
+  stroke: #424242;
+  top: 1rem;
+  width: 2.25rem;
+}
+
+.icon-menu {
+  display: none;
+  left: 1.5rem;
+  position: absolute;
+  top: 1rem;
+
+  @include respond(phone) {
+    display: block;
+  }
+}
+
+.icon-shopping {
+  left: 1.5rem;
+  position: absolute;
+  top: 1rem;
+}
+
+#snackbar {
+  background-color: #424242;
+  border: 1px dashed rgb(196, 196, 196);
+  border-radius: 2px;
+  color: whitesmoke;
+  height: 3.5rem;
+  left: 50%;
+  position: fixed;
+  padding: 1rem 3rem;
+  top: 5%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  z-index: 2;
+
+  &.show {
+    animation: fadein 0.7s ease-in-out, fadeout 0.7s ease-in-out;
+    visibility: visible;
+  }
+}
+
 /* --------------- Animations Class  --------------- */
 
 .aniAtribute {
@@ -338,15 +365,6 @@ body {
 }
 
 /* --------------- Animations  --------------- */
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
 @keyframes borderBottom {
   from {
