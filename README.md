@@ -1,4 +1,4 @@
-# Muskland
+# SHOP-PING
 
 A simple Ecommerce site for selling premium clothings.
 
