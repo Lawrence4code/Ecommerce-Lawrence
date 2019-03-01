@@ -5,25 +5,46 @@ console.log('index.js file.');
 // const tablinks = document.getElementsByClassName('tablinks');
 // const tabcontent = document.getElementsByClassName('tabcontent');
 
-document.getElementById('mens-outwear-tab').addEventListener('click', e => {
-  togglePage(e, 'mens-outwear-block');
-});
+const mensOutwearElement = document.querySelectorAll(
+  '#mens-outwear-tab, #mens-outwear-btn'
+);
+const ladiesOutwearElement = document.querySelectorAll(
+  '#ladies-outwear-tab, #ladies-outwear-btn'
+);
+const mensTshirtElement = document.querySelectorAll(
+  '#mens-tshirt-tab, #mens-tshirt-btn'
+);
+const ladiesTshirtElement = document.querySelectorAll(
+  '#ladies-tshirt-tab, #ladies-tshirt-btn'
+);
 
-document.getElementById('mens-outwear-tab').addEventListener('click', e => {
-  togglePage(e, 'mens-outwear-block');
-});
-
-document.getElementById('ladies-outwear-tab').addEventListener('click', e => {
-  togglePage(e, 'ladies-outwear-block');
-});
-document.getElementById('mens-tshirt-tab').addEventListener('click', e => {
-  togglePage(e, 'mens-tshirt-block');
-});
-document.getElementById('ladies-tshirt-tab').addEventListener('click', e => {
-  togglePage(e, 'ladies-tshirt-block');
-});
+for (let ele of mensOutwearElement) {
+  ele.addEventListener('click', e => {
+    togglePage(e, 'mens-outwear-block');
+  });
+}
+for (let ele of ladiesOutwearElement) {
+  ele.addEventListener('click', e => {
+    togglePage(e, 'ladies-outwear-block');
+  });
+}
+for (let ele of mensTshirtElement) {
+  ele.addEventListener('click', e => {
+    togglePage(e, 'mens-tshirt-block');
+  });
+}
+for (let ele of ladiesTshirtElement) {
+  ele.addEventListener('click', e => {
+    togglePage(e, 'ladies-tshirt-block');
+  });
+}
 
 function togglePage(e, page) {
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
   const tablinks = document.getElementsByClassName('tablinks');
 
   const blockContent = document.getElementsByClassName('blocks');
@@ -44,4 +65,17 @@ function togglePage(e, page) {
   e.currentTarget.className += ' aniAtribute';
 }
 
-// document.getElementById('hero').style.display = 'block';
+// Snackbar Function
+function snackbarFunction() {
+  var snackbarElement = document.getElementById('snackbar');
+
+  snackbarElement.className = 'show';
+
+  setTimeout(function() {
+    snackbarElement.className = snackbarElement.className.replace('show', '');
+  }, 2000);
+}
+
+document.querySelector('.icon').addEventListener('click', () => {
+  snackbarFunction();
+});

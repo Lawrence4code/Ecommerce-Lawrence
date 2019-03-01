@@ -7,6 +7,7 @@ body {
   background-color: whitesmoke;
 }
 
+/* --------------- Header --------------- */
 .header {
   &__main {
     text-align: center;
@@ -25,10 +26,16 @@ body {
   }
 }
 
+/* --------------- Navigation --------------- */
+
 .navigation {
   width: 60%;
   margin: 0 auto 2rem auto;
   text-align: center;
+
+  @include respond(phone) {
+    width: 90%;
+  }
 
   ul {
     display: grid;
@@ -38,11 +45,12 @@ body {
       font-size: 1.05rem;
       padding-bottom: 1rem;
       border-bottom: 1px solid transparent;
+      margin: 0 0.1rem;
     }
   }
 }
 
-// mens-outwear section
+/* --------------- main page block --------------- */
 
 .main-page-block {
   &__mens-outwear,
@@ -73,19 +81,19 @@ body {
       border-top: 1px rgb(146, 146, 146) dashed;
       border-bottom: 1px rgb(146, 146, 146) dashed;
       border-radius: 2px;
+
+      @include respond(phone) {
+        font-size: 1.5rem;
+      }
     }
 
-    & a {
+    & span {
       transition: all 0.3s ease-in-out;
-      &:link,
-      &:visited {
-        color: white;
-        background-color: #343b40;
-        padding: 1rem 3rem;
-        text-decoration: none;
-        text-transform: uppercase;
-        border-radius: 2px;
-      }
+      color: white;
+      background-color: #343b40;
+      padding: 1rem 3rem;
+      text-transform: uppercase;
+      border-radius: 2px;
 
       &:hover,
       &active {
@@ -95,67 +103,13 @@ body {
   }
 }
 
-.mens-outwear,
-.ladies-outwear,
-.mens-tshirt,
-.ladies-tshirt {
-  position: relative;
-  margin: 3.5rem 0 0 0;
-
-  height: 24rem;
-  background-position: center;
-  background-size: cover;
-
-  &__content {
-    position: absolute;
-    top: 72.5%;
-    left: 50%;
-    text-align: center;
-    transform: translate(-50%, -50%);
-  }
-
-  & p {
-    color: white;
-    font-size: 3rem;
-    background-color: rgba(82, 82, 82, 0.404);
-    font-weight: 600;
-    padding: 1rem 3rem;
-    margin-bottom: 2rem;
-    border-top: 1px rgb(146, 146, 146) dashed;
-    border-bottom: 1px rgb(146, 146, 146) dashed;
-    border-radius: 2px;
-  }
-
-  & a {
-    transition: all 0.3s ease-in-out;
-    &:link,
-    &:visited {
-      color: white;
-      background-color: #343b40;
-      padding: 1rem 3rem;
-      text-decoration: none;
-      text-transform: uppercase;
-      border-radius: 2px;
-    }
-
-    &:hover,
-    &active {
-      background-color: #4d4d4d;
-    }
-  }
-}
-
-.main-page-block__mens-outwear {
-  background-image: url('../images/mens-wear.jpg');
-}
-
-.main-page-block__ladies-outwear {
-  background-image: url('../images/ladies-wear.jpg');
-}
-
 .main-page-block__combined-tshirts {
   display: flex;
   padding-bottom: 1rem;
+
+  @include respond(phone) {
+    display: block;
+  }
 
   & p {
     font-size: 1.5rem;
@@ -169,6 +123,19 @@ body {
 .main-page-block__ladies-tshirt {
   margin-top: 1rem;
   width: 50%;
+
+  @include respond(phone) {
+    width: 100%;
+  }
+}
+
+.main-page-block__mens-outwear {
+  background-image: url('../images/mens-wear.jpg');
+}
+
+.main-page-block__ladies-outwear {
+  background-position: 50% 30%;
+  background-image: url('../images/ladies-wear.jpg');
 }
 
 .main-page-block__mens-tshirt {
@@ -179,7 +146,7 @@ body {
   background-image: url('../images/ladies-tshirt.jpg');
 }
 
-// Footer
+/* --------------- Footer --------------- */
 .footer {
   background-color: #e6eef0;
   height: 3rem;
@@ -204,22 +171,60 @@ body {
   }
 }
 
-// Styles
+/* --------------- Icon --------------- */
 
 .icon {
   display: inline-block;
   width: 2.25rem;
   height: 2.25rem;
   stroke-width: 0;
-  stroke: #000;
-  fill: #000;
+  stroke: #424242;
+  fill: #424242;
   position: absolute;
   top: 1rem;
   right: 1.5rem;
   cursor: pointer;
 }
 
-/*    Product Block - mens-outwear-block   */
+.icon-menu {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  display: none;
+
+  @include respond(phone) {
+    display: block;
+  }
+}
+
+.icon-shopping {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+}
+
+#snackbar {
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  color: whitesmoke;
+  background-color: #424242;
+  transform: translate(-50%, -50%);
+  padding: 1rem 3rem;
+  z-index: 2;
+  border: 1px dashed rgb(197, 58, 48);
+  border-radius: 2px;
+  height: 3.5rem;
+
+  &.show {
+    visibility: visible;
+    animation: fadein 0.7s ease-in-out, fadeout 0.7s ease-in-out;
+  }
+}
+
+/* --------------- Product Blocks  --------------- */
+
 .mens-outwear-block,
 .ladies-outwear-block,
 .mens-tshirt-block,
@@ -232,21 +237,20 @@ body {
 
   &__hero {
     position: relative;
-
-    height: 24rem;
+    height: 26rem;
     background-position: center;
     background-size: cover;
   }
 
   &__hero-content {
     position: absolute;
-    top: 72.5%;
+    top: 80%;
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
     & p {
       color: white;
-      font-size: 3rem;
+      font-size: 2rem;
       background-color: rgba(82, 82, 82, 0.404);
       font-weight: 600;
       padding: 1rem 3rem;
@@ -254,6 +258,10 @@ body {
       border-top: 1px rgb(146, 146, 146) dashed;
       border-bottom: 1px rgb(146, 146, 146) dashed;
       border-radius: 2px;
+
+      @include respond(phone) {
+        font-size: 1.5rem;
+      }
     }
 
     & a {
@@ -283,6 +291,13 @@ body {
     margin: 2rem auto 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    @include respond(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(phone) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__cards {
@@ -291,19 +306,22 @@ body {
 }
 
 .mens-outwear-block__hero {
-  background-image: url('../images/mens-wear.jpg');
+  background-image: url('../images/block-mens-wear.jpg');
 }
 
 .ladies-outwear-block__hero {
-  background-image: url('../images/ladies-wear.jpg');
+  background-image: url('../images/block-ladies-wear.jpg');
+  background-position: 50% 80%;
 }
 
 .mens-tshirt-block__hero {
-  background-image: url('../images/mens-tshirt.jpg');
+  background-image: url('../images/block-mens-tshirt.jpg');
+  background-position: 50% 70%;
 }
 
 .ladies-tshirt-block__hero {
-  background-image: url('../images/ladies-tshirt.jpg');
+  background-image: url('../images/block-ladies-tshirt.jpg');
+  background-position: 50% 65%;
 }
 
 .mens-outwear-block,
@@ -312,6 +330,14 @@ body {
 .ladies-tshirt-block {
   display: none;
 }
+
+/* --------------- Animations Class  --------------- */
+
+.aniAtribute {
+  animation: borderBottom 0.5s ease-in-out forwards;
+}
+
+/* --------------- Animations  --------------- */
 
 @keyframes fadeIn {
   from {
@@ -322,15 +348,29 @@ body {
   }
 }
 
-.aniAtribute {
-  animation: borderBottom 0.5s ease-in-out forwards;
-}
-
 @keyframes borderBottom {
   from {
     border-bottom: 1px solid transparent;
   }
   to {
     border-bottom: 1px solid #8d9296;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
   }
 }
