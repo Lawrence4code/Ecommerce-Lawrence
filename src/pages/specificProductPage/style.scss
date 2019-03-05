@@ -1,0 +1,220 @@
+@import '../../styles/mixins';
+@import '../../styles/base';
+
+body {
+  font-family: 'lato', sans-serif;
+  position: relative;
+}
+
+/* --------------- Header --------------- */
+.header {
+  &__main {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    & a {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      margin: 0.5rem 0 1rem 0;
+      padding: 0.5rem 0;
+      text-transform: uppercase;
+      color: #2b3236;
+      letter-spacing: 5px;
+      text-decoration: none;
+    }
+  }
+}
+
+/* --------------- Navigation --------------- */
+
+.navigation {
+  margin: 0 auto 2rem auto;
+  text-align: center;
+  width: 60%;
+
+  @include respond(phone) {
+    width: 90%;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    & li {
+      border-bottom: 1px solid transparent;
+      font-size: 1.05rem;
+      margin: 0 0.1rem;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+      width: fit-content;
+      margin: 0 auto;
+      transition: all 0.3s ease-in-out;
+      color: #242a2e;
+      cursor: pointer;
+
+      &:hover {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+/* --------------- Product --------------- */
+
+.product {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  height: 30rem;
+  animation: fadein 0.4s ease-in-out forwards;
+
+  @include respond(tablet) {
+    display: block;
+  }
+  &__image {
+    width: 55%;
+    @include respond(tablet) {
+      width: 100%;
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__detail {
+    width: 45%;
+    padding: 1rem;
+    @include respond(tablet) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #313131;
+    margin-bottom: 1rem;
+  }
+
+  &__price {
+    color: rgb(97, 97, 97);
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+
+  &__size,
+  &__quantity {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-top: 1px rgb(180, 180, 180) solid;
+    border-bottom: 1px rgb(180, 180, 180) solid;
+
+    padding: 0.35rem 0;
+
+    & label {
+      width: 15%;
+      color: rgb(97, 97, 97);
+      position: absolute;
+      font-size: 0.9rem;
+    }
+
+    & svg {
+      position: absolute;
+    }
+    & select {
+      -webkit-appearance: none;
+      padding: 0.5rem 6rem;
+      width: 100%;
+      border-radius: 2px;
+      border: none;
+      background-color: transparent;
+      font-size: inherit;
+      font-family: inherit;
+      text-transform: uppercase;
+      color: #616161;
+      z-index: 100;
+
+      &:focus {
+        // background-color: blue;
+        outline: none;
+      }
+    }
+  }
+
+  &__size {
+    border-bottom: none;
+  }
+
+  &__btn {
+    padding: 0.75rem 2rem;
+    background-color: #343b40;
+    margin: 1rem 0;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border-radius: 2px;
+
+    &:hover,
+    &active {
+      background-color: #4d4d4d;
+    }
+  }
+}
+
+.icon {
+  cursor: pointer;
+  display: inline-block;
+  fill: #424242;
+  height: 1.5rem;
+  position: absolute;
+  right: 1.5rem;
+  stroke-width: 0;
+  stroke: #424242;
+  top: 0.75rem;
+  width: 2.25rem;
+}
+
+.product-description {
+  color: #616161;
+
+  & h4 {
+    color: #1b1b1b;
+    font-size: 0.9rem;
+    margin: 1rem 0 1.75rem 0;
+  }
+
+  &__info {
+    font-size: 0.9rem;
+    margin: 1rem 0;
+  }
+
+  &__features {
+    text-transform: capitalize;
+  }
+
+  &__features-list {
+    margin: 0.5rem;
+    li {
+      padding: 0.1rem 0;
+      @include respond(tablet) {
+        text-align: left;
+      }
+    }
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

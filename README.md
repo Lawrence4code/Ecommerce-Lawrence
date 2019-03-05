@@ -2,7 +2,7 @@
 
 A simple Ecommerce site for selling premium clothings.
 
-This is site is for Demo Only.
+This site is for Demo Only.
 
 You can view the live website [here](https://youthful-aryabhata-bc500d.netlify.com/).
 
