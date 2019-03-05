@@ -1,0 +1,201 @@
+@import '../../styles/mixins';
+@import '../../styles/base';
+
+body {
+  font-family: 'lato', sans-serif;
+  position: relative;
+  height: 100vh;
+}
+
+/* --------------- Header --------------- */
+.header {
+  &__main {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: whitesmoke;
+
+    & a {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      margin: 0.5rem 0 1rem 0;
+      padding: 0.5rem 0;
+      text-transform: uppercase;
+      color: #2b3236;
+      letter-spacing: 5px;
+      text-decoration: none;
+    }
+  }
+}
+
+/* --------------- Cart --------------- */
+
+.cart {
+  width: 65%;
+  margin: 0 auto;
+
+  @include respond(phone) {
+    width: 90%;
+  }
+
+  &__heading {
+    text-align: center;
+    width: fit-content;
+    margin: 2rem auto 4rem auto;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1.5rem;
+
+    &-image {
+      width: 10%;
+      height: 10%;
+      @include respond(phone) {
+        width: 15%;
+      }
+    }
+
+    &-details {
+      display: flex;
+      flex-wrap: wrap;
+      width: 90%;
+      align-items: center;
+      @include respond(phone) {
+        width: 85%;
+      }
+    }
+
+    &-name {
+      font-size: 0.95rem;
+      width: 40%;
+      font-weight: bold;
+      padding-left: 1.5rem;
+      @include respond(phone) {
+        width: 100%;
+        font-size: 1.25rem;
+      }
+    }
+
+    &-size {
+      display: flex;
+      align-items: initial;
+      @include respond(phone) {
+        margin: 0 1.5rem;
+      }
+    }
+
+    &-info {
+      width: 60%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      color: #414141;
+      font-size: 0.9rem;
+      position: relative;
+      @include respond(phone) {
+        justify-content: flex-end;
+        width: 100%;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  &__action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__total {
+    font-weight: bold;
+    margin: 0 2rem;
+  }
+
+  &__checkout {
+    padding: 0.75rem 3rem;
+    background-color: #343b40;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border-radius: 2px;
+
+    &:hover,
+    &active {
+      background-color: #4d4d4d;
+    }
+
+    @include respond(phone) {
+      display: none;
+    }
+
+    &--mobile {
+      background-color: #343b40;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 1rem 0;
+      color: white;
+      font-size: 1.5rem;
+      text-align: center;
+      display: none;
+
+      @include respond(phone) {
+        display: block;
+      }
+
+      &:hover,
+      &active {
+        background-color: #4d4d4d;
+      }
+    }
+  }
+}
+
+/* --------------- Cart Icon --------------- */
+
+.icon {
+  cursor: pointer;
+  display: inline-block;
+  fill: #424242;
+  height: 1.5rem;
+  stroke-width: 0;
+  stroke: #424242;
+
+  &-shopping-cart {
+    position: absolute;
+    right: 1.5rem;
+    top: 0.75rem;
+    width: 2.25rem;
+  }
+
+  &-delete-item {
+    width: 0.8rem;
+    padding-bottom: 0.4rem;
+    @include respond(phone) {
+      position: absolute;
+      top: -2rem;
+    }
+  }
+
+  &-drop-down {
+    width: 3rem;
+    padding-bottom: 0.3rem;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

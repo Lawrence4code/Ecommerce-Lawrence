@@ -13,6 +13,7 @@ body {
     display: flex;
     justify-content: center;
     text-align: center;
+    background-color: whitesmoke;
 
     & a {
       font-family: 'Cinzel', serif;
@@ -30,7 +31,7 @@ body {
 /* --------------- Navigation --------------- */
 
 .navigation {
-  margin: 0 auto 2rem auto;
+  margin: 1rem auto 2rem auto;
   text-align: center;
   width: 60%;
 
@@ -187,19 +188,21 @@ body {
   & h4 {
     color: #1b1b1b;
     font-size: 0.9rem;
-    margin: 1rem 0 1.75rem 0;
+    margin: 0.75rem 0 1.25rem 0;
   }
 
   &__info {
     font-size: 0.9rem;
-    margin: 1rem 0;
+    margin: 0.75rem 0;
   }
 
   &__features {
+    font-size: 0.9rem;
     text-transform: capitalize;
   }
 
   &__features-list {
+    font-size: 0.9rem;
     margin: 0.5rem;
     li {
       padding: 0.1rem 0;
