@@ -12,5 +12,9 @@
 <title>arrow_drop_down</title>
 <path d="M6.984 9.984h10.031l-5.016 5.016z"></path>
 </symbol>
+<symbol id="icon-close" viewBox="0 0 20 20">
+<title>close</title>
+<path d="M10 8.586l-7.071-7.071-1.414 1.414 7.071 7.071-7.071 7.071 1.414 1.414 7.071-7.071 7.071 7.071 1.414-1.414-7.071-7.071 7.071-7.071-1.414-1.414-7.071 7.071z"></path>
+</symbol>
 </defs>
 </svg>
