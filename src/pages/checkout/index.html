@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cinzel"
+      rel="stylesheet"
+    />
+    <title>shop-ping</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__main">
+        <a href="./">~ shop-ping ~</a>
+      </div>
+    </header>
+    <div class="checkout__heading">
+      <h4 class="checkout__title">Your Cart</h4>
+      <h5 class="checkout__message">
+        *** Please review the item/s and proceed with payment ***
+      </h5>
+    </div>
+
+    <form class="form">
+      <section>
+        <div class="form__section-heading">Account Information</div>
+        <div class="form__input-group">
+          <input type="text" required />
+          <span class="form__input-highlight"></span>
+          <span class="form__input-bar"></span>
+          <label>Email</label>
+        </div>
+        <div class="form__input-group">
+          <input type="number" required />
+          <span class="form__input-highlight"></span>
+          <span class="form__input-bar"></span>
+          <label>Phone</label>
+        </div>
+        <div class="form__section-heading">Shipping Address</div>
+        <div class="form__input-group">
+          <input type="text" required />
+          <span class="form__input-highlight"></span>
+          <span class="form__input-bar"></span>
+          <label>Address</label>
+        </div>
+        <div class="form__input-group">
+          <input type="text" required />
+          <span class="form__input-highlight"></span>
+          <span class="form__input-bar"></span>
+          <label>City</label>
+        </div>
+        <div class="form__input-group-combined">
+          <div class="form__input-group">
+            <input type="text" required />
+            <span class="form__input-highlight"></span>
+            <span class="form__input-bar"></span>
+            <label>Address</label>
+          </div>
+          <div class="form__input-group">
+            <input type="text" required />
+            <span class="form__input-highlight"></span>
+            <span class="form__input-bar"></span>
+            <label>City</label>
+          </div>
+        </div>
+        <div class="form__input-group">
+          <select required>
+            <option value="US"> United State</option>
+            <option value="CA">Canada</option>
+          </select>
+          <span class="form__input-highlight"></span>
+          <span class="form__input-bar"></span>
+          <label>Country</label>
+        </div>
+        <h4>Billing Address</h4>
+        <div class="form__input-checkbox-group">
+          <input type="checkbox" required />
+          <label>Use different billing address.</label>
+        </div>
+      </section>
+      <section>
+        <div class="form__section-heading">Account Information</div>
+        <div class="form__input-group">
+          <input type="text" required />
+          <span class="form__input-highlight"></span>
+          <span class="form__input-bar"></span>
+          <label>Card Holder Name</label>
+        </div>
+        <div class="form__input-group">
+          <input type="number" required />
+          <span class="form__input-highlight"></span>
+          <span class="form__input-bar"></span>
+          <label>Card Number</label>
+        </div>
+      </section>
+    </form>
+    <!-- Cart icon -->
+    <a href="../cart/index.html">
+      <svg class="icon icon-shopping-cart">
+        <use
+          xlink:href="../../images/sprites.svg#icon-opencart"
+          href="../../images/sprites.svg#icon-opencart"
+        ></use>
+      </svg>
+    </a>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
+
+<!-- <input list="country" name="country" placeholder="United State" />
+  <datalist id="country">
+    <option value="United State"> </option>
+    <option value="Canada"> </option>
+  </datalist>
+  <span class="form__input-highlight"></span>
+  <span class="form__input-bar"></span>
+  <label>Country</label> -->

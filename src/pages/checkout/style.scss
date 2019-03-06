@@ -1,0 +1,237 @@
+@import '../../styles/mixins';
+@import '../../styles/base';
+
+body {
+  font-family: 'lato', sans-serif;
+  position: relative;
+  height: 100vh;
+}
+
+/* --------------- Header --------------- */
+.header {
+  &__main {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: whitesmoke;
+
+    & a {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      margin: 0.5rem 0 1rem 0;
+      padding: 0.5rem 0;
+      text-transform: uppercase;
+      color: #2b3236;
+      letter-spacing: 5px;
+      text-decoration: none;
+    }
+  }
+}
+
+/* --------------- Cart --------------- */
+
+.checkout {
+  width: 65%;
+  margin: 0 auto;
+
+  @include respond(phone) {
+    width: 90%;
+  }
+
+  &__heading {
+    text-align: center;
+    width: fit-content;
+    margin: 2rem auto 4rem auto;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+.form {
+  width: 65%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  &__section-heading {
+    margin-bottom: 2rem;
+  }
+
+  & section {
+    width: 40%;
+  }
+  &__input-group {
+    position: relative;
+    margin-bottom: 2rem;
+
+    & select {
+      border: none;
+      -webkit-appearance: none;
+      border-bottom: 1px solid grey;
+      border-radius: 0;
+    }
+  }
+
+  &__input-checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+
+    & input {
+      width: fit-content;
+    }
+
+    & label {
+      position: relative;
+      top: 0;
+      color: #000;
+      left: 2rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__input-group-combined {
+    display: flex;
+    justify-content: space-between;
+
+    & div {
+      width: 47%;
+    }
+  }
+}
+
+input,
+select {
+  font-size: 1rem;
+  padding: 10px 10px 20px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #757575;
+  position: relative;
+}
+
+select {
+  background-color: white;
+  height: 3rem;
+}
+input:focus,
+select:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label,
+select:focus ~ label,
+input:valid ~ label,
+select:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264ae;
+}
+
+/* BOTTOM BARS ================================= */
+.form__input-bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.form__input-bar:before,
+.form__input-bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  position: absolute;
+  background: #5264ae;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.form__input-bar:before {
+  left: 50%;
+}
+.form__input-bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .form__input-bar:before,
+input:focus ~ .form__input-bar:after {
+  width: 50%;
+}
+select:focus ~ .form__input-bar:before,
+select:focus ~ .form__input-bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.form__input-highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* --------------- Cart Icon --------------- */
+
+.icon {
+  cursor: pointer;
+  display: inline-block;
+  fill: #424242;
+  height: 1.5rem;
+  stroke-width: 0;
+  stroke: #424242;
+
+  &-shopping-cart {
+    position: absolute;
+    right: 1.5rem;
+    top: 0.75rem;
+    width: 2.25rem;
+  }
+
+  &-delete-item {
+    width: 0.8rem;
+    padding-bottom: 0.4rem;
+    @include respond(phone) {
+      position: absolute;
+      top: -2rem;
+    }
+  }
+
+  &-drop-down {
+    width: 3rem;
+    padding-bottom: 0.3rem;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
