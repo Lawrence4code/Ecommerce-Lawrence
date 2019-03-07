@@ -51,7 +51,7 @@
           <span class="form__input-bar"></span>
           <label>City</label>
         </div>
-        <div class="form__input-group-combined">
+        <div class="form__input-group-combined form__input-group-combined--1">
           <div class="form__input-group">
             <input type="text" required />
             <span class="form__input-highlight"></span>
@@ -70,6 +70,10 @@
             <option value="US"> United State</option>
             <option value="CA">Canada</option>
           </select>
+            <svg class="icon icon-drop-down">
+              <use xlink:href="../../images/sprites.svg#icon-arrow_drop_down" href="../../images/sprites.svg#icon-arrow_drop_down">
+              </use>
+            </svg>
           <span class="form__input-highlight"></span>
           <span class="form__input-bar"></span>
           <label>Country</label>
@@ -77,11 +81,11 @@
         <h4>Billing Address</h4>
         <div class="form__input-checkbox-group">
           <input type="checkbox" required />
-          <label>Use different billing address.</label>
+          <h5>Use different billing address.</h5>
         </div>
       </section>
       <section>
-        <div class="form__section-heading">Account Information</div>
+        <div class="form__section-heading">Payment Method</div>
         <div class="form__input-group">
           <input type="text" required />
           <span class="form__input-highlight"></span>
@@ -94,6 +98,74 @@
           <span class="form__input-bar"></span>
           <label>Card Number</label>
         </div>
+        <div class="form__input-group-combined form__input-group-combined--2">
+            <div class="form__input-group">
+            <select required>
+              <option value="mar">Jan</option>
+              <option value="mar">Feb</option>
+              <option value="mar">Mar</option>
+              <option value="apr">Apr</option>
+              <option value="may">May</option>
+              <option value="jun">Jun</option>
+              <option value="jul">Jul</option>
+              <option value="aug">Aug</option>
+              <option value="sep">Sep</option>
+              <option value="oct">Oct</option>
+              <option value="nov">Nov</option>
+              <option value="dec">Dec</option>
+            </select>
+            <svg class="icon icon-drop-down">
+              <use xlink:href="../../images/sprites.svg#icon-arrow_drop_down" href="../../images/sprites.svg#icon-arrow_drop_down">
+              </use>
+            </svg>
+            <span class="form__input-highlight"></span>
+            <span class="form__input-bar"></span>
+            <label>Expiry</label>
+          </div>
+          <div class="form__input-group">
+            <select required>
+                <option value="mar">2016</option>
+                <option value="apr">2017</option>
+                <option value="may">2018</option>
+                <option value="jun">2019</option>
+                <option value="jul">2020</option>
+                <option value="aug">2021</option>
+                <option value="aug">2022</option>
+                <option value="aug">2023</option>
+                <option value="aug">2024</option>
+                <option value="aug">2025</option>
+                <option value="aug">2026</option>          
+            </select>
+            <svg class="icon icon-drop-down">
+              <use xlink:href="../../images/sprites.svg#icon-arrow_drop_down" href="../../images/sprites.svg#icon-arrow_drop_down">
+              </use>
+            </svg>
+            <span class="form__input-highlight"></span>
+            <span class="form__input-bar"></span>
+          </div>
+              <div class="form__input-group">
+                <input type="text" required />
+                <span class="form__input-highlight"></span>
+                <span class="form__input-bar"></span>
+                <label>CVV</label>
+              </div>
+        </div>
+        <div class='order'>
+          <h4 class='order__title'>Order Summary</h4>
+          <ul class='order__list'>
+            <li class='order__listItem'>
+              <h5> Men's Tech Shell Full-Zip </h5> <h5>$150.60</h5> 
+            </li>
+            <li class='order__listItem'>
+              <h5> Anvil L/S Crew Neck - Blue</h5>
+              <h5>$22.15</h5>
+            </li>
+          </ul>
+          <div class='order__total'>
+              <h4> Total </h4> $170.75
+            </div>
+            <a href="#" class="order__btn">Place Order</a>
+        </div>
       </section>
     </form>
     <!-- Cart icon -->
@@ -105,16 +177,7 @@
         ></use>
       </svg>
     </a>
-
+    <div class="order__btn--mobile">Place Order</div>
     <script src="./index.js"></script>
   </body>
 </html>
-
-<!-- <input list="country" name="country" placeholder="United State" />
-  <datalist id="country">
-    <option value="United State"> </option>
-    <option value="Canada"> </option>
-  </datalist>
-  <span class="form__input-highlight"></span>
-  <span class="form__input-bar"></span>
-  <label>Country</label> -->
