@@ -340,16 +340,18 @@ body {
 
 #snackbar {
   background-color: #424242;
+  text-align: center;
   border: 1px dashed rgb(196, 196, 196);
   border-radius: 2px;
   color: whitesmoke;
-  height: 3.5rem;
+  height: 5.5rem;
   left: 50%;
   position: fixed;
-  padding: 1rem 3rem;
+  padding: 2rem 3rem;
   top: 5%;
   transform: translate(-50%, -50%);
   visibility: hidden;
+  width: 70%;
   z-index: 2;
 
   &.show {
